@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+package smartwarehouse;
+
+message Shipment {
+    string id = 1;
+    string orderId = 2;
+    repeated string itemIds = 3;
+    // Add more fields as needed
+}
+
+service ShippingService {
+    rpc ShipItems (Shipment) returns (Shipment);
+    rpc TrackShipment (Shipment) returns (Shipment);
+    // Add more RPC methods as needed
+}
+

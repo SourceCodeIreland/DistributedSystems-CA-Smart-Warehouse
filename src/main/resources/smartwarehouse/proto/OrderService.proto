@@ -1,0 +1,16 @@
+﻿syntax = "proto3";
+
+package smartwarehouse;
+
+message Order {
+    string id = 1;
+    repeated string itemIds = 2;
+    // Add more fields as needed
+}
+
+service OrderService {
+    rpc PlaceOrder (Order) returns (Order);
+    rpc GetOrderStatus (Order) returns (Order);
+    // Add more RPC methods as needed
+}
+

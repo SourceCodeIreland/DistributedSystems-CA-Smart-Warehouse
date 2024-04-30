@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+package smartwarehouse;
+
+message StockItem {
+    string id = 1;
+    string name = 2;
+    int32 quantity = 3;
+    // Add more fields as needed
+}
+
+service StockService {
+    rpc GetStockItems () returns (stream StockItem);
+    rpc AddStockItem (StockItem) returns (StockItem);
+    // Add more RPC methods as needed
+}
+
